@@ -1,0 +1,77 @@
+.slider{
+    width: 100%;
+    height: 700px;
+    margin-top: 15px;
+    border-radius: 15px;
+    
+    .slider_item{
+        height: 700px;
+        border-radius: 15px;
+
+        .slider_item_slide{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background-size: cover !important;
+            background-position:center !important;
+            display: flex;
+            align-items: center;
+
+            .slide_item--title--description--button{
+                transform: translateX(150px);
+                height: 160px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .slider_item_slide--title{
+                    color: #fff;
+                    font-size: 45px;
+                }
+                .slider_item_slide--description{
+                    color: #fff;
+                    font-size: 25px;
+                }
+                .slider_item_slide--button{
+                    color: #fff;
+                    font-size: 20px;
+                    border: solid 1px;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px;
+                    width: 150px;
+                    transition: .2s;
+                }
+                .slider_item_slide--button:hover{
+                    box-shadow: 0px 3px 11px 3px #3e3e3e;
+                }
+                .slider_item_slide--button:active{
+                    transform: scale(0.9);
+                }
+            }
+        }
+    }
+    .slick-dots{
+        bottom: 45px;
+    }
+    .slick-dots li{
+        margin: 0 15px;
+    }
+    .slick-dots li.slick-active button:before{
+        color: #ffff;
+        transition: .2s;
+        transform: scale(3);
+        opacity: 1;
+    }
+    .slick-dots li button:before{
+        transform: scale(2);
+        opacity: 0.5;
+        color: white;
+    }
+    .slick-slider .slick-track, .slick-slider .slick-list{
+        border-radius: 25px;
+    }
+
+}

@@ -14,7 +14,7 @@ header{
     justify-content: space-between;
     img{
         position: absolute;
-        left: 42.5%;
+        left: 45.5%;
     }
 
     .header--log_in_search_basket{
@@ -45,8 +45,8 @@ header{
         .header--search_basket{
             display: flex;
             align-items: center;
-            width: 150px;
-            justify-content: space-evenly;
+            width: 100px;
+            justify-content: space-between;
             color: #FFFF;
 
             .header--search{
