@@ -3,7 +3,7 @@ import { BsFillPersonFill } from 'react-icons/bs';
 import { BsSearch } from 'react-icons/bs';
 import { BiShoppingBag } from 'react-icons/bi';
 import { BurgerButton } from "./BurgerButton";
-import logo from '../../images/logo.svg'
+import logo from '../../staticImages/logo.svg'
 import '../../styles/header.scss'
 
 export const Header = () => {
