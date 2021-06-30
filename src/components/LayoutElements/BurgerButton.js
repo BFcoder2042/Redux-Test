@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { connect, useDispatch } from "react-redux";
 import '../../styles/burgerButton.scss'
+import { switchBurger } from "../../redux/actions";
 
-export const BurgerButton = () => {
-    let [burger, setBurger] = useState(false)
-
-    const toggleClassBurgerButton = () => {
-        setBurger(
-            burger = !burger
-        )
+const BurgerButton = ({ syncBurger }) => {
+    const dispatch = useDispatch()
+    const handlerBurger = (event) => {
+        console.log(event.target);
+        dispatch(switchBurger())
     }
-
+    document.body.style.overflow = syncBurger ? "hidden" : "visible"
     return (
-        <div id="nav-icon3" onClick={toggleClassBurgerButton} className={burger ? 'open' : ''}>
+        <div id="nav-icon3" onClick={handlerBurger} className={syncBurger ? 'open' : ''} style={{
+            left: syncBurger ? '200px' : '0px'
+        }}>
             <span></span>
             <span></span>
             <span></span>
@@ -19,3 +21,11 @@ export const BurgerButton = () => {
         </div>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        syncBurger: state.burger.burger
+    }
+}
+
+export default connect(mapStateToProps, null)(BurgerButton)

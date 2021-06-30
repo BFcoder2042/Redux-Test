@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect, useDispatch } from "react-redux";
 import { fetchedProducts } from "../../redux/actions";
 import '../../styles/products.scss'
@@ -8,10 +8,9 @@ const Product = ({ syncProducts }) => {
     dispatch(fetchedProducts())
     let obj = {}
     syncProducts.forEach(el => [obj[el.type] = el])
-    console.log(obj);
     return (
         <div className="products">
-            {Object.keys(obj).length != 0 &&
+            {Object.keys(obj).length > 0 &&
                 <div className='products_container'>
                     <div className="products--technics--services--accessories">
                         <div className='products--technics--services'>

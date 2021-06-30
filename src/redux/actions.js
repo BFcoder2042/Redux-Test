@@ -1,5 +1,7 @@
 import { GET_SLIDES } from "./types"
 import { GET_PRODUCTS } from "./types"
+import { SWITCH_BURGER } from "./types"
+let burger = false;
 const slides = [
     {
         id: 1,
@@ -58,5 +60,11 @@ export function fetchedProducts() {
     return dispatch => {
         const result = products
         dispatch({ type: GET_PRODUCTS, payload: result })
+    }
+}
+export function switchBurger() {
+    return dispatch => {
+        burger = !burger
+        dispatch({ type: SWITCH_BURGER, payload: burger })
     }
 }

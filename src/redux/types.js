@@ -1,2 +1,3 @@
 export const GET_SLIDES = 'GET/GET_SLIDES';
 export const GET_PRODUCTS = 'GET/GET_PRODUCTS';
+export const SWITCH_BURGER = 'SWITCH/SWITCH_BURGER';

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsFillPersonFill } from 'react-icons/bs';
 import { BsSearch } from 'react-icons/bs';
 import { BiShoppingBag } from 'react-icons/bi';
-import { BurgerButton } from "./BurgerButton";
+import BurgerButton from "./BurgerButton";
 import logo from '../../staticImages/logo.svg'
 import '../../styles/header.scss'
 
@@ -29,7 +29,7 @@ export const Header = () => {
     return (
         <header>
             <BurgerButton></BurgerButton>
-            <img src={logo}></img>
+            <img src={logo} alt='logo'></img>
             <div className='header--log_in_search_basket'>
                 <div className='header--log_in' style={{ transform: style.transform }}>войти <BsFillPersonFill /></div>
                 <div className='header--search_basket'>

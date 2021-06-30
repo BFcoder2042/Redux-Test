@@ -10,8 +10,9 @@
   -webkit-transition: .5s ease-in-out;
   -moz-transition: .5s ease-in-out;
   -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  transition: .3s ease-in-out;
   cursor: pointer;
+  z-index: 90;
 }
 
  #nav-icon3 span {

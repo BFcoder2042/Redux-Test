@@ -1,7 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect, useDispatch } from "react-redux";
+import '../../styles/contacts.scss'
 
-export const Contacts = () => {
+const Contacts = () => {
     return (
-        <div></div>
+        <div className="contacts">
+
+        </div>
     )
 }
+
+export default connect(null, null)(Contacts)

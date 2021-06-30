@@ -70,9 +70,12 @@
         transform: scale(2);
         opacity: 0.5;
         color: white;
+        transition: .2s;
+
     }
     .slick-slider .slick-track, .slick-slider .slick-list{
         border-radius: 25px;
     }
-
+    .slider .slick-dots li button:before{
+    }
 }
