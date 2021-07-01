@@ -3,10 +3,11 @@ import '../../styles/sliderCarousel.scss'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { connect, useDispatch } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { fetchedSlides } from "../../redux/actions";
 
 const SliderCarousel = ({ syncSlide }) => {
+    const burger = useSelector(state => state.burger.burger)
     const dispatch = useDispatch()
     dispatch(fetchedSlides())
     const settings = {
@@ -18,7 +19,7 @@ const SliderCarousel = ({ syncSlide }) => {
         arrows: false
     };
     return (
-        <div className='slider'>
+        <div className='slider' style={{ transform: burger ? 'scale(0.8)' : 'scale(1)' }}>
             <Slider {...settings}>
                 {syncSlide.map(slide => {
                     return <div className='slider_item' key={slide.id} style='color:red;'>

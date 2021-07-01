@@ -2,6 +2,7 @@ $border_radius:25px;
 $shadow:0px 2px 12px -3px #171717;
 
 .products{
+    transition: .2s;
     .products_container{
         width: 100%;
         display: flex;
@@ -22,7 +23,6 @@ $shadow:0px 2px 12px -3px #171717;
                     }
                 }
                 .short_item:hover{
-                    background-size: 109% !important;
                     span{
                      @extend .product__span_hover
                     }
@@ -38,7 +38,6 @@ $shadow:0px 2px 12px -3px #171717;
                 }
             }
             .long_item:hover{
-                background-size: 109% !important;
                 span{
                     @extend .product__span_hover
                 }
@@ -52,7 +51,6 @@ $shadow:0px 2px 12px -3px #171717;
             }
         }
         .products--games:hover{
-            background-size: 109% !important;
             span{
                 @extend .product__span_hover
             }
@@ -66,7 +64,7 @@ $shadow:0px 2px 12px -3px #171717;
     border-radius: $border_radius;
     box-shadow: $shadow;
     cursor: pointer;
-    background-size: 100% !important;
+    background-size: cover !important;
     background-position: center !important;
     color: #ffff;
     text-transform: capitalize;

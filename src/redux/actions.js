@@ -1,5 +1,6 @@
 import { GET_SLIDES } from "./types"
 import { GET_PRODUCTS } from "./types"
+import { GET_CONTACTS } from "./types"
 import { SWITCH_BURGER } from "./types"
 let burger = false;
 const slides = [
@@ -50,6 +51,16 @@ const products = [
         type: 'games'
     }
 ]
+const contacts = [
+    {
+        address: 'Гостиный Двор, проспект К.Маркса, Магнитогорск',
+        phone: '8 (950)-734-81-91',
+        email: 'malkoviphone@gmail.com',
+        working_hours: '9:00 - 21:00',
+        additional_info: '',
+        coordinates: '53.40286432924223, 58.987150900202884'
+    }
+]
 export function fetchedSlides() {
     return dispatch => {
         const result = slides
@@ -60,6 +71,12 @@ export function fetchedProducts() {
     return dispatch => {
         const result = products
         dispatch({ type: GET_PRODUCTS, payload: result })
+    }
+}
+export function fetchedContacts() {
+    return dispatch => {
+        const result = contacts
+        dispatch({ type: GET_CONTACTS, payload: result })
     }
 }
 export function switchBurger() {

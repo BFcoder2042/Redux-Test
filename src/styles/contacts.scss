@@ -1,0 +1,32 @@
+.contacts{
+    width: 100%;
+    height: 500px;
+    .contacts_title{
+        color: #D3D3D3;
+        font-size: 30px;
+    }
+    .contacts_map_content{
+        display: flex;
+        height: 90%;
+        justify-content: space-between;
+
+        .contacts_content{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .contacts_content_item{
+                color: #e1e1e1;
+                font-size: 20px;
+            }
+        }
+        .contacts_map{
+        }
+    }
+}
+
+.leaflet-container{
+    width: 650px;
+    height: 380px;
+}

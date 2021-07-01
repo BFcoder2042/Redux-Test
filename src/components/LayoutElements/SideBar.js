@@ -6,9 +6,6 @@ import SideBarItems from "./SideBarItems";
 
 export const SideBar = () => {
     const burger = useSelector(state => state.burger.burger)
-    const product = useSelector(state => state.products.fetchedProducts).map(el => {
-        return { id: el.id, action: null, title: el.title }
-    });
     let [style, setStyle] = useState({});
     let [sideBarChild, setSideBarChild] = useState(
         [{
@@ -36,6 +33,11 @@ export const SideBar = () => {
                     {
                         id: 4,
                         title: 'услуги',
+                        action: null
+                    },
+                    {
+                        id: 5,
+                        title: 'смотреть все',
                         action: null
                     }
                 ]
@@ -70,7 +72,6 @@ export const SideBar = () => {
             }
         }]
     )
-
     const toggleSubItems = (id) => {
         setSideBarChild(
             sideBarChild.map(item => {
@@ -90,7 +91,7 @@ export const SideBar = () => {
     return (
         <div className="side_bar" style={{ height: style.height, width: burger ? '250px' : '0px' }}>
             {sideBarChild.map(item => {
-                return <SideBarItems sideBarChild={sideBarChild} toggleSubItems={toggleSubItems} child={item} key={item.id}></SideBarItems>
+                return <SideBarItems toggleSubItems={toggleSubItems} child={item} key={item.id}></SideBarItems>
             })}
         </div>
     )
