@@ -20,6 +20,20 @@
         cursor: pointer;
         width: 250px;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        svg{
+            font-size: 15px;
+            opacity: 0;
+            transition: .2s;
+        }
+     }
+     .side_bar_item:hover{
+        svg{
+            margin-left: 10px;
+            opacity: 1;
+        }
      }
      .side_bar_items_child{
         width: 100%;

@@ -8,7 +8,7 @@ export const MainPage = () => {
         <React.Fragment>
             <SliderCarousel />
             <Product />
-            <Contacts />
+            {/* <Contacts /> */}
         </React.Fragment>
     )
 }

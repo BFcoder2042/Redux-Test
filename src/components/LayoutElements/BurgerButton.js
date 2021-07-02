@@ -1,18 +1,19 @@
 import React from "react";
-import { connect, useDispatch } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import '../../styles/burgerButton.scss'
 import { switchBurger } from "../../redux/actions";
 
 const BurgerButton = ({ syncBurger }) => {
+    const log_in = useSelector(state => state.log_in.log_in)
     const dispatch = useDispatch()
     const handlerBurger = (event) => {
-        console.log(event.target);
         dispatch(switchBurger())
     }
-    document.body.style.overflow = syncBurger ? "hidden" : "visible"
+    document.body.style.overflow = syncBurger ? "hidden" : ""
     return (
         <div id="nav-icon3" onClick={handlerBurger} className={syncBurger ? 'open' : ''} style={{
-            left: syncBurger ? '200px' : '0px'
+            left: syncBurger ? '200px' : '0px',
+            zIndex: log_in ? '1' : '90'
         }}>
             <span></span>
             <span></span>

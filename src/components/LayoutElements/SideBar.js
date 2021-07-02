@@ -75,8 +75,8 @@ export const SideBar = () => {
     const toggleSubItems = (id) => {
         setSideBarChild(
             sideBarChild.map(item => {
-                if (item.id != id) item.subItems.active = false
-                if (item.subItems.child.length != 0 && item.id === id)
+                if (item.id !== id) item.subItems.active = false
+                if (item.subItems.child.length !== 0 && item.id === id)
                     item.subItems.active = !item.subItems.active
                 return item
             })

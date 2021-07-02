@@ -17,7 +17,6 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 const Contacts = ({ syncContacts }) => {
 
-    console.log(syncContacts);
     const dispatch = useDispatch()
     dispatch(fetchedContacts())
     return (

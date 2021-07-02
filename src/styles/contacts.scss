@@ -21,12 +21,12 @@
                 font-size: 20px;
             }
         }
-        .contacts_map{
-        }
     }
 }
 
 .leaflet-container{
+    transform: translateY(-25px);
     width: 650px;
-    height: 380px;
+    height: 405px;
+    box-shadow: 0px 4px 9px 2px #1f1f1f;
 }

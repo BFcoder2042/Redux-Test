@@ -1,8 +1,14 @@
 import { GET_SLIDES } from "./types"
 import { GET_PRODUCTS } from "./types"
 import { GET_CONTACTS } from "./types"
+import { GET_FOOTER } from "./types"
 import { SWITCH_BURGER } from "./types"
+import { SWITCH_LOG_IN_FORM } from "./types"
+import { SWITCH_REGISTER_FORM } from "./types"
+
 let burger = false;
+let log_in = false;
+let register = false;
 const slides = [
     {
         id: 1,
@@ -49,7 +55,7 @@ const products = [
         title: 'игры',
         image: 'http://localhost:3000/images/product_4.jpg',
         type: 'games'
-    }
+    },
 ]
 const contacts = [
     {
@@ -59,6 +65,21 @@ const contacts = [
         working_hours: '9:00 - 21:00',
         additional_info: '',
         coordinates: '53.40286432924223, 58.987150900202884'
+    }
+]
+const footer = [
+    {
+        logo: '',
+        icons: [
+            {
+                image: 'http://localhost:3000/images/footer_icon_1.svg',
+                link: ''
+            },
+            {
+                image: 'http://localhost:3000/images/footer_icon_2.svg',
+                link: ''
+            }
+        ]
     }
 ]
 export function fetchedSlides() {
@@ -79,9 +100,27 @@ export function fetchedContacts() {
         dispatch({ type: GET_CONTACTS, payload: result })
     }
 }
+export function fetchedFooter() {
+    return dispatch => {
+        const result = footer
+        dispatch({ type: GET_FOOTER, payload: result })
+    }
+}
 export function switchBurger() {
     return dispatch => {
         burger = !burger
         dispatch({ type: SWITCH_BURGER, payload: burger })
+    }
+}
+export function switchLogIn() {
+    return dispatch => {
+        log_in = !log_in
+        dispatch({ type: SWITCH_LOG_IN_FORM, payload: log_in })
+    }
+}
+export function switchRegister(bool) {
+    return dispatch => {
+        register = bool
+        dispatch({ type: SWITCH_REGISTER_FORM, payload: register })
     }
 }

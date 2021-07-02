@@ -2,10 +2,12 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { MainPage } from "./pages/MainPage";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { Header } from '../src/components/LayoutElements/Header.js'
-import { Footer } from '../src/components/LayoutElements/Footer.js'
+import Header from '../src/components/LayoutElements/Header.js'
+import Footer from '../src/components/LayoutElements/Footer.js'
 import { SideBar } from '../src/components/LayoutElements/SideBar.js'
 import BackSideBar from '../src/components/LayoutElements/BackSideBar.js'
+import Authorization from '../src/components/LayoutElements/Authorization.js'
+import Register from '../src/components/LayoutElements/Register.js'
 import '../src/styles/app.scss'
 
 
@@ -19,6 +21,8 @@ function App() {
             <div className="container_app">
               <div className="client">
                 <BackSideBar></BackSideBar>
+                <Authorization></Authorization>
+                <Register></Register>
                 <SideBar></SideBar>
                 <div className="client_container">
                   <Helmet>

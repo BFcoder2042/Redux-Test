@@ -5,11 +5,11 @@ import { BiShoppingBag } from 'react-icons/bi';
 import BurgerButton from "./BurgerButton";
 import logo from '../../staticImages/logo.svg'
 import '../../styles/header.scss'
+import { connect, useDispatch } from "react-redux";
+import { switchLogIn } from "../../redux/actions";
 
-export const Header = () => {
-
+const Header = ({ syncLogIn }) => {
     let [style, setStyle] = useState({})
-
     const showInput = () => {
         let stylesElements = {
             active: true,
@@ -26,12 +26,18 @@ export const Header = () => {
         else setStyle({})
     }
 
+    const dispatch = useDispatch()
+    const handlerLogIn = () => {
+        dispatch(switchLogIn())
+    }
+    if (syncLogIn === true) document.body.parentNode.style.overflow = 'hidden'
+    else document.body.parentNode.style.overflow = ''
     return (
         <header>
             <BurgerButton></BurgerButton>
             <img src={logo} alt='logo'></img>
             <div className='header--log_in_search_basket'>
-                <div className='header--log_in' style={{ transform: style.transform }}>войти <BsFillPersonFill /></div>
+                <div className='header--log_in' onClick={handlerLogIn} style={{ transform: style.transform }}>войти <BsFillPersonFill /></div>
                 <div className='header--search_basket'>
                     <div className='header--search' >
                         <BsSearch onClick={showInput} />
@@ -43,3 +49,11 @@ export const Header = () => {
         </header>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        syncLogIn: state.log_in.log_in
+    }
+}
+
+export default connect(mapStateToProps, null)(Header)
