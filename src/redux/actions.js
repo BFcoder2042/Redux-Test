@@ -5,10 +5,61 @@ import { GET_FOOTER } from "./types"
 import { SWITCH_BURGER } from "./types"
 import { SWITCH_LOG_IN_FORM } from "./types"
 import { SWITCH_REGISTER_FORM } from "./types"
+import { GET_SIDE_BAR } from "./types"
+import { OPEN_SIDEBAR_CHILD_LIST } from "./types"
+import { CLOSED_SIDEBAR_CHILD_LIST } from "./types";
+
 
 let burger = false;
 let log_in = false;
 let register = false;
+const side_bar = [{
+    id: 1,
+    title: 'Главная страница',
+    action: 'link',
+    path: '/',
+    subItems: {
+        active: false,
+        child: []
+    }
+}, {
+    id: 2,
+    title: 'каталог',
+    action: null,
+    subItems: {
+        active: false,
+        child: []
+    }
+
+}, {
+    id: 3,
+    title: 'личный кабинет',
+    action: 'link',
+    path: 'profile',
+    subItems: {
+        active: false,
+        child: []
+    }
+},
+{
+    id: 4,
+    title: 'связь с нами',
+    action: null,
+    subItems: {
+        active: false,
+        child: [{
+            id: 1,
+            title: 'отправить сообщение',
+            action: 'modal'
+        },
+        {
+            id: 2,
+            title: 'заказать звонок',
+            action: 'modal'
+        },
+        ]
+    }
+}]
 const slides = [
     {
         id: 1,
@@ -122,5 +173,39 @@ export function switchRegister(bool) {
     return dispatch => {
         register = bool
         dispatch({ type: SWITCH_REGISTER_FORM, payload: register })
+    }
+}
+export function fetchedSideBar() {
+    return dispatch => {
+        side_bar[1].subItems.child = products.map((item, index) => {
+            return {
+                id: index,
+                title: item.title,
+                path: item.type,
+                action: 'link'
+            }
+        })
+        const result = side_bar
+        dispatch({ type: GET_SIDE_BAR, payload: result })
+    }
+}
+export function openSubItemsSideBar(id) {
+    return dispatch => {
+        side_bar.map(item => {
+            if (item.id !== id) item.subItems.active = false
+            if (item.subItems.child.length !== 0 && item.id === id)
+                item.subItems.active = !item.subItems.active
+            return item
+        })
+        dispatch({ type: OPEN_SIDEBAR_CHILD_LIST, payload: side_bar })
+    }
+}
+export function closedSubItemsSideBar() {
+    return dispatch => {
+        side_bar.map(item => {
+            item.subItems.active = false
+            return item
+        })
+        dispatch({ type: CLOSED_SIDEBAR_CHILD_LIST, payload: side_bar })
     }
 }

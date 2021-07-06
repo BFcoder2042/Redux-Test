@@ -6,6 +6,7 @@ import { contactsReducer } from "./contactsReducer";
 import { footerReducer } from "./footerReducer";
 import { logInFormReducer } from "./logInFormReducer";
 import { registerFormReducer } from "./registerFormReducer";
+import { sideBarReducer } from "./sideBarReducer";
 
 export const rootReducer = combineReducers({
     slides: slidesReducer,
@@ -14,5 +15,6 @@ export const rootReducer = combineReducers({
     contacts: contactsReducer,
     footer: footerReducer,
     log_in: logInFormReducer,
-    register: registerFormReducer
+    register: registerFormReducer,
+    sideBar: sideBarReducer
 });
